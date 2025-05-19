@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
+  integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      section {
+        background-color: rgb(165, 89, 34);
+      }
+
+      .inner {
+        width: 1800px;
+        margin: 0 auto; /* 섹션 아래에 이너로 가운데 정렬 시키기 */
+        /* background-color: dimgrey; */
+      }
+
+      .visual {
+        background-image: url(images/frederic-malle.png); /* 섹션 전체의 배경 */
+        background-position: center;
+        margin-top: 120px;
+      }
+
+      .visual .inner {
+        height: 646px; /* 이 안에 이미지들 배치하기 */
+        position: relative; /* absolute 기준점으로 inner 잡아주기 */
+      }
+
+      .visual .title { 
+        position: absolute;
+        bottom: -5px;
+        left: -60px;
+      }
+
+      .visual .image {
+      /*   position: absolute;         */
+      }
+
+      .visual .pic1.image {
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+      }
+
+      .visual .pic2.image {
+        position: absolute;
+        bottom: 0;
+        right: -20px;
+      }
+
+      .visual .pic3.image {
+        position: absolute;
+        bottom: 0;
+        left: 230px;
+      }
+
+      .visual .pic4.image {
+        position: absolute;
+        bottom: 0;
+        right: 275px;
+      }
+
+      .visual .pic5.image {
+        position: absolute;
+        bottom: 0;
+        left: 475px;
+      }
+
+      .visual .pic6.image {
+        position: absolute;
+        bottom: 0;
+        right: 500px;
+      }
+
+
+      .visual .last.image {
+        position: absolute;
+        bottom: 0;
+        right: 600px;
+        width: 650px;      /* 원본보다 크게 */
+        height: auto;
+      }
+
+
+
+
+
+
+      .visual .fade-in {
+        opacity: 0;
+      }
+
+
+
+    </style>
+
+
+
+
+  </head>
+  <body>
+    <section class="visual">
+      <!-- 가로 전부 먹기 -->
+
+      <div class="inner">
+        <!-- 중앙정렬을 위한 width 정하기 -->
+
+        <div class="title fade-in">
+          <img src="images/1-removebg-preview.png" alt="" class="pic1 image" />          
+        </div>
+
+        <div class="fade-in">
+          <img src="images/2-removebg-preview.png" alt="" class="pic2 image" />          
+        </div>
+
+        <div class="fade-in">
+          <img src="images/3-removebg-preview.png" alt="" class="pic3 image" />     
+        </div>
+
+        <div class="fade-in">
+          <img src="images/4-removebg-preview.png" alt="" class="pic4 image" />
+        </div>
+
+        <div class="fade-in">
+          <img src="images/5-removebg-preview.png" alt="" class="pic5 image" />
+        </div>
+
+        <div class="fade-in">
+          <img src="images/6-removebg-preview.png" alt="" class="pic6 image" />
+        </div>
+
+
+        <div class="fade-in">
+          <img src="images/last-removebg-preview.png" alt="" class="last image" />
+        </div>
+
+
+      </div>
+    </section>
+
+    <script>
+      const fadeEls = document.querySelectorAll('.visual .fade-in'); /* .visual 아래있는 .fade-in 선택해줘라 */
+      /* querySelectorAll : 같은 이름 가진 애들을 모두 배열로 만들어준다 */
+      /* (요소들:Elements)배열이므로 s 붙여주고, 요소를 불러올 때는 s 빼주기 */
+      fadeEls.forEach(function (fadeEl, index) {
+        gsap.to(fadeEl, {
+          duration: 1,
+          delay: (index + 1) * 0.7,
+          opacity: 1,
+        });
+      });
+    </script>
+  </body>
+</html>
