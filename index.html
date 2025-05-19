@@ -25,6 +25,28 @@
         padding: 0;
       }
 
+
+
+      .site-header {
+        position: absolute;   /* 배경 위에 떠 있도록 */
+        top: -10px;               /* 화면 최상단 */
+        left: 50%;            /* 가로 중앙 기준선 */
+        transform: translateX(-50%);  /* 진짜 중앙 정렬 */
+        width: 100%;          /* 가로 꽉 채우기 (텍스트 정렬용) */
+        text-align: center;   /* 내부 img 가운데 정렬 */
+        padding: 20px 0;      /* 위아래 여백 조절 */
+        pointer-events: none; /* 섹션 클릭을 방해하지 않도록 (선택사항) */
+        z-index: 10;          /* 섹션보다 위에 표시 */
+      }
+
+      .site-logo {
+        max-width: 100px;     /* 로고 최대 크기 */
+        height: auto;
+        pointer-events: auto; /* 로고 자체 클릭 가능 */
+      }
+
+
+
       section {
         background-color: rgb(0, 0, 0);
       }
@@ -50,10 +72,6 @@
         position: absolute;
         bottom: -5px;
         left: -60px;
-      }
-
-      .visual .image {
-      /*   position: absolute;         */
       }
 
       .visual .pic1.image {
@@ -101,14 +119,14 @@
         height: auto;
       }
 
-
-
-
-
+      
 
       .visual .fade-in {
         opacity: 0;
       }
+
+
+
 
 
 
@@ -119,6 +137,12 @@
 
   </head>
   <body>
+
+    <header class="site-header">
+      <img src="images/logo.png" alt="Site Logo" class="site-logo">
+    </header>
+
+
     <section class="visual">
       <!-- 가로 전부 먹기 -->
 
